@@ -8,5 +8,9 @@ Thermostat.prototype.temperature = function() {
 };
 
 Thermostat.prototype.up = function() {
-  this._temperature++; // we know this returns undefined 
+  this._temperature++; // we know this returns undefined
+};
+
+Thermostat.prototype.down = function() {
+  this._temperature--; // we know this returns undefined 
 };

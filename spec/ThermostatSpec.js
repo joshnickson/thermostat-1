@@ -15,5 +15,9 @@ describe('Thermostat', function() {
         thermostat.up();
         expect(thermostat.temperature()).toEqual(thermostat.DEFAULT_TEMPERATURE + 1)
       });
+      it('Thermostat.prototype.down decrease temperature by 1', function() {
+        thermostat.down();
+        expect(thermostat.temperature()).toEqual(thermostat.DEFAULT_TEMPERATURE - 1)
+      });
     });
 });
