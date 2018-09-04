@@ -19,5 +19,12 @@ describe('Thermostat', function() {
         thermostat.down();
         expect(thermostat.temperature()).toEqual(thermostat.DEFAULT_TEMPERATURE - 1)
       });
+      it('Minimum temperature is 10 degress', function() {
+        var i;
+        for (i=0; i<10; i++) {
+          thermostat.down();
+        }
+        expect(function() {thermostat.down();}).toThrowError('Minimum temperature is 10');
+      });
     });
 });

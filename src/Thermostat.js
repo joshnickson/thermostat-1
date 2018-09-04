@@ -12,5 +12,9 @@ Thermostat.prototype.up = function() {
 };
 
 Thermostat.prototype.down = function() {
-  this._temperature--; // we know this returns undefined 
+  if (this._temperature === 10) {
+    throw new Error('Minimum temperature is 10');
+  } else {
+    this._temperature--; // we know this returns undefined
+  }
 };
