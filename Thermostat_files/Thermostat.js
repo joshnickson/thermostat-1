@@ -8,13 +8,10 @@ $( document ).ready(function() {
     alert( "Temperature goes up" );
   });
 
-  $("#Down").click(function() {
-    alert( "Temperature goes down" );
-  });
+  if ( $( "Up" ).length) {
+    alert( "Up" );
+  }
 
-  $("#Reset").click(function() {
-    alert( "Temperature reset" );
-  });
 
   function Thermostat() {
     this.DEFAULT_TEMPERATURE = 20;
