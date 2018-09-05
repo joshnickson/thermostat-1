@@ -37,5 +37,12 @@ describe('Thermostat', function() {
         thermostat._temperature = 32;
         expect( function() { thermostat.up() }).toThrowError('Max temperature is 32');
       });
+
+      it('Resets the temperature', function() {
+        thermostat._temperature = 23;
+        thermostat.reset();
+        expect(thermostat.temperature()).toEqual(20);
+      });
+
     });
 });

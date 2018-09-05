@@ -26,4 +26,10 @@ Thermostat.prototype._maxTemperature = function() {
   var max_temp;
   (this.power_mode === true) ? max_temp = 25 : max_temp = 32;
   return max_temp;
-}
+};
+
+Thermostat.prototype.reset = function() {
+  this._temperature = 20;
+};
+
+
