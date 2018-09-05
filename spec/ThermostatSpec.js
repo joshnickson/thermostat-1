@@ -24,7 +24,18 @@ describe('Thermostat', function() {
         for (i=0; i<10; i++) {
           thermostat.down();
         }
-        expect(function() {thermostat.down();}).toThrowError('Minimum temperature is 10');
+        expect(function() {thermostat.down() }).toThrowError('Minimum temperature is 10');
+      });
+
+      it('Max temperature is 25deg in power saving mode', function() {
+        thermostat._temperature = 25;
+        expect( function() { thermostat.up() }).toThrowError('Max temperature is 25');
+      });
+
+      it('Max temperature is 32deg when not in power saving mode', function() {
+        thermostat.power_mode = false;
+        thermostat._temperature = 32;
+        expect( function() { thermostat.up() }).toThrowError('Max temperature is 32');
       });
     });
 });
