@@ -6,18 +6,17 @@
     <title>Thermostat</title>
     <script src="jquery-3.3.1.js"></script>
     <script src="src/Thermostat.js"></script>
+    <script src="src/ThermoController.js"></script>
   </head>
 
   <body>
     <h1>Thermostat!</h1>
     <button type="button" id="Up">Up</button><br><br>
-      <div class="display">
-        20 degrees celcius
-      </div><br><br>
+      <div id="temperature"></div><br><br>
     <button type="button" id="Down">Down</button>
     <button type="button" id="Reset">Reset</button>
       <label class="switch">
-        <input type="checkbox">
+        <input type="checkbox" id="power-save">
         <span class="slider round"></span>
       </label>
   </body>
